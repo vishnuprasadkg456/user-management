@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+   
+<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/adminStyle.css">
+
+</head>
+<body>
+    
+       
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card border-0 shadow rounded-3 p-4">
+                    <h2 class="text-center">Admin Login</h2>
+                    <% if (typeof error !== 'undefined') { %>
+                        <div class="alert alert-danger"><%= error %></div>
+                    <% } %>
+                    <form id="loginForm" action="/admin/login" method="POST" class="mt-4">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                            <div id="emailError" class="text-danger"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" class="form-control" required>
+                            <div id="passwordError" class="text-danger"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block mt-sm-3">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
